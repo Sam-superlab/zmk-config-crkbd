@@ -12,44 +12,9 @@
     combos {
         compatible = "zmk,combos";
 
-        combo1 {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <9 10>;
-        };
-
-        combo2 {
-            bindings = <&kp ENTER>;
-            key-positions = <21 22>;
-        };
-
-        combo4 {
-            bindings = <&kp ESCAPE>;
-            key-positions = <1 0>;
-        };
-
-        combo5 {
-            bindings = <&kp EQUAL>;
-            key-positions = <21 20>;
-        };
-
-        combo6 {
-            bindings = <&kp MINUS>;
-            key-positions = <20 19>;
-        };
-
-        cmb5 {
-            bindings = <&kp CAPS>;
-            key-positions = <13 14>;
-        };
-
-        com6 {
-            bindings = <&bootloader>;
-            key-positions = <28 29>;
-        };
-
-        com7 {
-            bindings = <&kp TAB>;
-            key-positions = <26 25>;
+        layer3 {
+            bindings = <&lt 3 SPACE>;
+            key-positions = <38 39>;
         };
     };
 
@@ -59,28 +24,37 @@
         mac_layer {
             display-name = "QWERTY";
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E                          &kp R           &kp T          &kp Y        &kp U      &kp I              &kp O    &kp P     &kp BACKSPACE
-&kp TAB     &kp A  &kp S  &kp D                          &kp F           &kp G          &kp H        &kp J      &kp K              &kp L    &kp SEMI  &kp BSLH
-&kp LALT    &kp Z  &kp X  &kp C                          &kp V           &kp B          &kp N        &kp M      &kp COMMA          &kp DOT  &kp FSLH  &kp CAPS
-                          &mt LEFT_COMMAND LEFT_COMMAND  &kp LEFT_SHIFT  &lt 1 SPACE    &lt 2 SPACE  &kp ENTER  &kp RIGHT_CONTROL
+&kp ESCAPE  &kp Q  &kp W  &kp E             &kp R           &kp T          &kp Y        &kp U      &kp I              &kp O    &kp P     &kp BACKSPACE
+&kp TAB     &kp A  &kp S  &kp D             &kp F           &kp G          &kp H        &kp J      &kp K              &kp L    &kp SEMI  &kp BSLH
+&kp LALT    &kp Z  &kp X  &kp C             &kp V           &kp B          &kp N        &kp M      &kp COMMA          &kp DOT  &kp FSLH  &kp CAPS
+                          &kp LEFT_COMMAND  &kp LEFT_SHIFT  &lt 1 SPACE    &lt 2 SPACE  &kp ENTER  &kp RIGHT_CONTROL
             >;
         };
 
         win_layer {
             bindings = <
-&kp TILDE  &kp N1  &kp N2  &kp N3            &kp N4            &kp N5               &kp N6     &kp N7        &kp N8  &kp N9      &kp N0   &none
-&none      &none   &none   &none             &kp LEFT_BRACKET  &kp RIGHT_BRACKET    &kp LEFT   &kp DOWN      &kp UP  &kp RIGHT   &kp SQT  &none
-&none      &none   &none   &none             &none             &none                &kp UNDER  &kp KP_EQUAL  &none   &kp PERIOD  &none    &none
-                           &kp LEFT_COMMAND  &kp LSHFT         &none                &none      &kp ENTER     &none
+&kp TILDE  &kp N1  &kp N2     &kp N3            &kp N4            &kp N5               &kp N6     &kp N7        &kp N8  &kp N9      &kp N0   &none
+&none      &none   &kp TILDE  &kp DEL           &kp LEFT_BRACKET  &kp RIGHT_BRACKET    &kp LEFT   &kp DOWN      &kp UP  &kp RIGHT   &kp SQT  &none
+&none      &none   &none      &none             &none             &none                &kp UNDER  &kp KP_EQUAL  &none   &kp PERIOD  &none    &none
+                              &kp LEFT_COMMAND  &kp LSHFT         &none                &none      &kp ENTER     &none
             >;
         };
 
         layer_1 {
             bindings = <
-&none  &kp LS(N1)    &kp LS(N2)       &kp LS(N3)    &kp LS(N4)         &kp LS(N5)     &kp LS(N6)      &kp LS(N7)       &kp LS(N8)  &kp LS(N9)         &kp LS(N0)  &none
-&none  &none         &kp C_VOLUME_UP  &kp DEL       &kp C_VOLUME_DOWN  &kp K_MUTE     &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE    &kp DOUBLE_QUOTES  &none       &none
-&none  &bt BT_SEL 3  &bt BT_SEL 2     &bt BT_SEL 1  &bt BT_SEL 0       &bootloader    &kp MINUS       &kp PLUS         &none       &trans             &none       &none
-                                      &none         &none              &none          &none           &none            &none
+&none  &kp LS(N1)    &kp LS(N2)    &kp LS(N3)       &kp LS(N4)         &kp LS(N5)     &kp LS(N6)      &kp LS(N7)       &kp LS(N8)  &kp LS(N9)         &kp LS(N0)  &none
+&none  &none         &none         &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE     &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE    &kp DOUBLE_QUOTES  &none       &none
+&none  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1     &bt BT_SEL 0       &bootloader    &kp MINUS       &kp PLUS         &none       &trans             &none       &none
+                                   &none            &none              &none          &none           &none            &none
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&kp ESC       &kp ESC   &none  &none  &none  &none    &none  &none  &none  &none  &none     &none
+&kp TAB       &kp TAB   &none  &none  &none  &none    &none  &none  &none  &none  &kp BSLH  &kp BSLH
+&kp LEFT_ALT  &kp LALT  &none  &none  &none  &none    &none  &none  &none  &none  &kp CAPS  &kp CAPS
+                               &none  &none  &none    &none  &none  &none
             >;
         };
     };
